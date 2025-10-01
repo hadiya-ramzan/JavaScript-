@@ -81,3 +81,24 @@ if (true) {
     console.log(d);  // 12 
 }
 console.log(d); //not accessible outside the block (block scope)
+
+
+// variable shadowing 
+// cases for legal shadowing: let → let, const → const, var → var, var → let/const (in block scope)
+var var1 = 23; 
+{
+    let var1 = 43;
+    console.log(var1);
+    
+}
+console.log(var1);
+// it's legal shadowing
+
+let var2 = "abc";
+{
+    // var var2 = "def";
+    console.log(var2);
+}
+console.log(var2);
+// it's illegal shadowing
+// cases for illegal shadowing : let → var, const → var
